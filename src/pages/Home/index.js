@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { StatusBar } from "react-native";
 
 import * as Styles from "./styles";
 
@@ -10,6 +11,7 @@ class Home extends Component {
   render() {
     return (
       <Styles.Container>
+        <StatusBar barStyle="light-content" />
         <Styles.TitleContainer>
           <Styles.Title>Template criado para facilitar criação</Styles.Title>
           <Styles.Title>de novos projetos para PRTE -</Styles.Title>
