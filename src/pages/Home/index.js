@@ -13,9 +13,8 @@ const Home = () => (
   <Container>
     <StatusBar barStyle="light-content" />
     <TitleContainer>
-      <Title>Template criado para facilitar a</Title>
-      <Title>criação de novos projetos para</Title>
-      <Title>PRTE - Tecnologias e Soluções</Title>
+      <Title>Just a template to make easy</Title>
+      <Title>to create new RN projects</Title>
     </TitleContainer>
     <Logo resizeMode="contain" source={require('~/assets/img/logo.png')} />
   </Container>
