@@ -1,13 +1,13 @@
-import Immutable from "seamless-immutable";
+import Immutable from 'seamless-immutable';
 
 export const Types = {
-  GET_REQUEST: "example/GET_REQUEST",
-  GET_SUCCESS: "example/GET_SUCCESS",
-  GET_FAILURE: "example/GET_FAILURE",
+  GET_REQUEST: 'example/GET_REQUEST',
+  GET_SUCCESS: 'example/GET_SUCCESS',
+  GET_FAILURE: 'example/GET_FAILURE',
 
-  GET_REFRESH_REQUEST: "example/GET_REFRESH_REQUEST",
-  GET_REFRESH_SUCCESS: "example/GET_REFRESH_SUCCESS",
-  GET_REFRESH_FAILURE: "example/GET_REFRESH_FAILURE"
+  GET_REFRESH_REQUEST: 'example/GET_REFRESH_REQUEST',
+  GET_REFRESH_SUCCESS: 'example/GET_REFRESH_SUCCESS',
+  GET_REFRESH_FAILURE: 'example/GET_REFRESH_FAILURE',
 };
 
 const initialState = Immutable({
@@ -15,7 +15,7 @@ const initialState = Immutable({
   loading: true,
   refreshing: false,
   error: null,
-  page: 1
+  page: 1,
 });
 
 export default function example(state = initialState, action) {
@@ -28,7 +28,7 @@ export default function example(state = initialState, action) {
         data: [...state.data, ...action.payload.data],
         loading: false,
         error: null,
-        page: action.payload.data.length ? state.page + 1 : state.page
+        page: action.payload.data.length ? state.page + 1 : state.page,
       };
     case Types.GET_FAILURE:
       return { ...state, loading: false, error: action.payload.error };
@@ -40,7 +40,7 @@ export default function example(state = initialState, action) {
         data: action.payload.data,
         refreshing: false,
         error: null,
-        page: 2
+        page: 2,
       };
     case Types.GET_REFRESH_FAILURE:
       return { ...state, refreshing: false, error: action.payload.error };
@@ -51,30 +51,30 @@ export default function example(state = initialState, action) {
 
 export const Creators = {
   getExampleRequest: () => ({
-    type: Types.GET_REQUEST
+    type: Types.GET_REQUEST,
   }),
 
   getExampleSuccess: data => ({
     type: Types.GET_SUCCESS,
-    payload: { data }
+    payload: { data },
   }),
 
   getExampleFailure: error => ({
     type: Types.GET_FAILURE,
-    payload: { error }
+    payload: { error },
   }),
 
   getExampleRefreshRequest: () => ({
-    type: Types.GET_REFRESH_REQUEST
+    type: Types.GET_REFRESH_REQUEST,
   }),
 
   getExampleRefreshSuccess: data => ({
     type: Types.GET_REFRESH_SUCCESS,
-    payload: { data }
+    payload: { data },
   }),
 
   getExampleRefreshFailure: error => ({
     type: Types.GET_REFRESH_FAILURE,
-    payload: { error }
-  })
+    payload: { error },
+  }),
 };

@@ -1,8 +1,8 @@
-import { createStore, compose, applyMiddleware } from "redux";
-import createSagaMiddleware from "redux-saga";
+import { createStore, compose, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 
-import reducers from "./ducks";
-import sagas from "./sagas";
+import reducers from './ducks';
+import sagas from './sagas';
 
 const middlewares = [];
 
@@ -14,9 +14,9 @@ middlewares.push(sagaMiddleware);
 
 const composer = __DEV__
   ? compose(
-      applyMiddleware(...middlewares),
-      console.tron.createEnhancer()
-    )
+    applyMiddleware(...middlewares),
+    console.tron.createEnhancer(),
+  )
   : compose(applyMiddleware(...middlewares));
 
 const store = createStore(reducers, composer);

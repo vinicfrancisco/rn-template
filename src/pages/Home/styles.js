@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import { colors, normalize } from "~assets/styles";
+import styled from 'styled-components/native';
+import { colors, normalize } from '~assets/styles';
 
 export const Container = styled.View`
   background-color: ${colors.black};
